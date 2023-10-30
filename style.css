@@ -1,4 +1,86 @@
-h1 {
+body {
+  font-family: "Roboto",
+    sans-serif;
   text-align: center;
-  color: red;
+  color: white;
 }
+.btn-warning {
+  color:white;
+  font-weight: bold;
+  width: 90PX;
+  margin-top: 10px;
+  margin-left: -75px;
+}
+.btn-primary {
+  color:white;
+  font-weight: bold;
+  background-color: #89b2ec;
+  width: 90PX;
+  margin-top: 10px;
+  border-color:  #89b2ec;
+  margin-left: -50px;
+
+}
+input{
+  margin-top: 10px;
+  max-width: 5000px;
+}
+h1 {
+  color: #ffc436;
+  font-weight: bold;
+}
+.units {
+  position: relative;
+  top: -34px;
+  left:40px;
+  color:#ffc436
+}
+
+a {
+  color: #ffc436;
+}
+.time {
+  margin-bottom:20px;
+}
+.container {
+  texte-align: center
+  max-width: 2000px;
+  display: block;
+  margin-top: 60px;
+  text-align: center;
+  background-color: #337ccf;
+  background: linear-gradient(
+    #337ccf,
+    #9198e5
+  );
+
+}
+.col-3{
+  display: block;
+  margin: 0 auto;
+}
+.container-days
+{
+  display: block;
+  margin: 0 auto;
+  max-width: 2000px;
+  texte-align:center;
+}
+
+.card {
+  margin-bottom: 20px;
+  background-color: #89b2ec;
+  border-color: white;
+}
+.card-title {
+  font-weight: bold;
+  color: white;
+}
+
+.card-text {
+  color: white;
+}
+h2 {
+  font-weight: bold;
+}
+

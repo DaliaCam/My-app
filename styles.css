@@ -27,14 +27,25 @@ input {
 h1 {
   color: #ffc436;
   font-weight: bold;
-}
-.units {
-  position: relative;
-  top: -34px;
-  left: 40px;
-  color: #ffc436;
+  font-size: 70px;
 }
 
+h2 {
+  font-size: 70px;
+}
+
+h2,
+h4 {
+  display: inline;
+}
+
+.city-time-wheater {
+  text-align: left;
+}
+
+.city-temperature-icon {
+  margin-top: 40px;
+}
 a {
   color: #ffc436;
 }
@@ -81,4 +92,8 @@ a {
 }
 h2 {
   font-weight: bold;
+}
+
+.card-subtitle {
+  font-size: 30px;
 }

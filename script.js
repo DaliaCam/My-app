@@ -33,30 +33,41 @@ let currentDate =
 time.innerHTML = `${hours}:${minutes}`;
 date.innerHTML = `${currentDate}/${months[month]}/${year}`;
 console.log(month);
-
 function showTemperature(
   response
 ) {
   document.querySelector(
     "#city"
   ).innerHTML =
-    response.data.name;
+    response.data.city;
+  console.log(response.data);
+  document.querySelector(
+    "#humidity"
+  ).innerHTML =
+    response.data.temperature.humidity;
+  document.querySelector(
+    "#wind"
+  ).innerHTML =
+    response.data.wind.speed;
+  document.querySelector(
+    "#wheater-description"
+  ).innerHTML =
+    response.data.condition.description;
   let temperature =
     Math.round(
       response.data.main.temp
     );
-  let temperatureText =
-    document.querySelector(
-      "#temperature"
-    );
-  temperatureText.innerHTML =
-    temperature;
+
+  document.querySelector(
+    "#temperature"
+  ).innerHTML =
+    response.data.temperature.current;
 }
 
 function searchCity(city) {
   let apiKey =
-    "e150c305c02488c12758b495b131c7bd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios
     .get(apiUrl)
     .then(showTemperature);

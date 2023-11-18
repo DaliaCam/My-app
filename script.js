@@ -62,6 +62,11 @@ function showTemperature(
     "#temperature"
   ).innerHTML =
     response.data.temperature.current;
+  let iconElement =
+    document.querySelector(
+      "#icon"
+    );
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function searchCity(city) {

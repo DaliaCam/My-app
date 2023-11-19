@@ -21,7 +21,8 @@ body {
   border-color: #89b2ec;
   margin-left: -10px;
 }
-strong {
+strong,
+.wheater-units {
   color: #ffc436;
 }
 input {
@@ -57,6 +58,12 @@ a {
 }
 .time {
   margin-bottom: 20px;
+}
+
+.degree {
+  font-size: 20px;
+  margin-top: -300px;
+  padding: 0px;
 }
 .container {
   text-align: center;

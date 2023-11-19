@@ -55,13 +55,13 @@ function showTemperature(
     response.data.condition.description;
   let temperature =
     Math.round(
-      response.data.main.temp
+      response.data
+        .temperature.current
     );
 
   document.querySelector(
     "#temperature"
-  ).innerHTML =
-    response.data.temperature.current;
+  ).innerHTML = temperature;
   let iconElement =
     document.querySelector(
       "#icon"

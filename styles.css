@@ -64,6 +64,12 @@ h4 {
 a {
   color: #ffc436;
 }
+
+.max {
+  font-weight: 10000;
+  font-size: 20px;
+  color: #f3e7c9;
+}
 .time {
   margin-bottom: 20px;
 }

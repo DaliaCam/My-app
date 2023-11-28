@@ -109,6 +109,70 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+function displayForecast() {
+  let forecast =
+    document.querySelector(
+      "#forecast"
+    );
+
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    " Friday",
+    "Saturday,",
+  ];
+  let forecastHtml = "";
+
+  days.forEach(function (
+    day
+  ) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div
+        class="container-days"
+      >
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                 ${day}
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  ☀️
+              </p>
+                <p
+                  class="card-text"
+                >
+                  <b class="max">25°</b> 10°
+                </p>
+              </div>
+            </div>
+          </div>
+ `;
+  });
+  let forecastElement =
+    document.querySelector(
+      "#forecast"
+    );
+  forecastElement.innerHTML =
+    forecastHtml;
+}
+
 let searchForm =
   document.querySelector(
     "#search-form"
@@ -125,3 +189,4 @@ positionButton.addEventListener(
   "click",
   getPosition
 );
+displayForecast();

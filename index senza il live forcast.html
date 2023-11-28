@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Parcel Sandbox
+    </title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form
+        class="search-form"
+        id="search-form"
+      >
+        <div class="row">
+          <div class="col-8">
+            <input
+              type="search"
+              autocomplete="off"
+              class="form-control shadow-sm"
+              id="city-input"
+            />
+          </div>
+          <div class="col-2">
+            <button
+              type="submit"
+              class="btn btn-warning"
+              style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: .rem;
+              "
+            >
+              Search
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="position-button"
+              style="
+                --bs-btn-padding-y: 0.25rem;
+                --bs-btn-padding-x: 0.5rem;
+                --bs-btn-font-size: .rem;
+              "
+            >
+              Position
+            </button>
+          </div>
+        </div>
+      </form>
+      <div
+        class="container-now"
+      >
+        <div class="row">
+          <div class="col-8">
+            <div class = city-time-wheater >
+            <h1 id="city">
+              Milan
+            </h1>
+            <h4
+              class="date"
+              id="date"
+            >
+              30/09/2023
+            </h4>
+            <h4
+              class="time"
+              id="time"
+            >
+              19:28
+            </h4>
+             <h5>
+             Humidity: <strong id="humidity">66</strong><span class="wheater-units">%</span>
+              Wind: <strong id="wind">33.5</strong> <span class="wheater-units">km/h</span>
+              <span id="wheater-description"><h5>sunny</H5></span>
+            </h5>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class = city-temperature-icon >
+             <h2
+              id="temperature"
+            >
+              20
+            </h2>
+          <span class="degree">°C</span>
+            <h2>
+              <div id="icon">
+                <img class="city-main-icon" src="">
+              </div>
+            </h2>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container-days"
+      >
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Monday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  ☀️
+              </p>
+                <p
+                  class="card-text"
+                >
+                  <b class="max">25°</b> 10°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Tuesday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  🌤
+              </p>
+                <p
+                  class="card-text"
+                >
+                 <b class="max">30°</b>
+                  20°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Wednesday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  🌤
+              </p>
+                <p
+                  class="card-text"
+                ><b class="max">25°</b>
+                  20°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Thursday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  ☀️
+              </p>
+                <p
+                  class="card-text"
+                ><b class="max">25°</b>
+                  25°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Friday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  🌤
+              </p>
+                <p
+                  class="card-text"
+                >
+                <b class="max">25°</b>
+                  20°
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+              "
+            >
+              <div
+                class="card-body"
+              >
+                <h5
+                  class="card-title"
+                >
+                  Saturday
+                </h5>
+                <p
+                  class="card-subtitle mb-2 text-body-secondary"
+                >
+                  🌤
+              </p>
+                <p
+                  class="card-text"
+                ><b class="max">25°</b>
+                  20°
+                </p>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      href="https://github.com/DaliaCam/My-app"
+      >Open source code by
+      Dalia</a
+    >
+    <script src="script.js"></script>
+  </body>
+</html>

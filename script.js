@@ -123,7 +123,7 @@ function displayForecast() {
     " Friday",
     "Saturday,",
   ];
-  let forecastHtml = "";
+  let forecastHTML = "";
 
   days.forEach(function (
     day
@@ -170,7 +170,7 @@ function displayForecast() {
       "#forecast"
     );
   forecastElement.innerHTML =
-    forecastHtml;
+    forecastHTML;
 }
 
 let searchForm =

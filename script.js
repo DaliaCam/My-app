@@ -67,6 +67,10 @@ function showTemperature(
       "#icon"
     );
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(
+    response.data.city
+  );
 }
 
 function searchCity(city) {
@@ -109,20 +113,28 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-function displayForecast() {
-  let forecast =
-    document.querySelector(
-      "#forecast"
-    );
+function getForecast(city) {
+  let apiKey =
+    "t7o2b3350b9f3f4ae8520ed2e97340f9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(
+    displayForecast
+  );
+}
 
+function displayForecast(
+  response
+) {
+  console.log(response.data);
   let days = [
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     " Friday",
-    "Saturday,",
+    "Saturday",
   ];
+
   let forecastHTML = "";
 
   days.forEach(function (
@@ -130,12 +142,7 @@ function displayForecast() {
   ) {
     forecastHTML =
       forecastHTML +
-      `
-    <div
-        class="container-days"
-      >
-        <div class="row">
-          <div class="col-4">
+      `<div class="col-4">
             <div
               class="card"
               style="
@@ -189,4 +196,5 @@ positionButton.addEventListener(
   "click",
   getPosition
 );
-displayForecast();
+
+searchCity("Paris");

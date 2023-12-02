@@ -125,3 +125,6 @@ h2 {
 .card-subtitle {
   font-size: 30px;
 }
+.weather-forecast-icon {
+  width: 55px;
+}

@@ -126,23 +126,15 @@ function displayForecast(
   response
 ) {
   console.log(response.data);
-  let days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    " Friday",
-    "Saturday",
-  ];
 
   let forecastHTML = "";
 
-  days.forEach(function (
-    day
-  ) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-4">
+  response.data.daily.forEach(
+    function (day, index) {
+      if (index < 6) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="col-4">
             <div
               class="card"
               style="
@@ -155,23 +147,36 @@ function displayForecast(
                 <h5
                   class="card-title"
                 >
-                 ${day}
+                 Monday
                 </h5>
                 <p
                   class="card-subtitle mb-2 text-body-secondary"
                 >
-                  ☀️
+                  <img src ="${
+                    day
+                      .condition
+                      .icon_url
+                  }"  class="weather-forecast-icon" />
               </p>
                 <p
                   class="card-text"
                 >
-                  <b class="max">25°</b> 10°
+                  <b class="max">${Math.round(
+                    day
+                      .temperature
+                      .maximum
+                  )}°</b> ${Math.round(
+            day.temperature
+              .minimum
+          )}
                 </p>
               </div>
             </div>
           </div>
  `;
-  });
+      }
+    }
+  );
   let forecastElement =
     document.querySelector(
       "#forecast"

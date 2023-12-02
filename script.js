@@ -86,12 +86,14 @@ function searchPosition(
   position
 ) {
   let apiKey =
-    "e150c305c02488c12758b495b131c7bd";
-  let lat =
-    position.coords.latitude;
+    "t7o2b3350b9f3f4ae8520ed2e97340f9";
   let lon =
-    position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    position.coordinates
+      .longitude;
+  let lat =
+    position.coordinates
+      .latitude;
+  let apiUrl = `https://https://api.shecodes.io/weather/v1/current?lon=${lon}&lat${lat}${apiKey}&units=metric`;
   axios
     .get(apiUrl)
     .then(showTemperature);

@@ -112,6 +112,23 @@ function handleSubmit(event) {
     ).value;
   searchCity(city);
 }
+function formatDay(
+  timestamp
+) {
+  let date = new Date(
+    timestamp * 1000
+  );
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  return days[date.getDay()];
+}
 
 function getForecast(city) {
   let apiKey =
@@ -147,7 +164,9 @@ function displayForecast(
                 <h5
                   class="card-title"
                 >
-                 Monday
+                ${formatDay(
+                  day.time
+                )}
                 </h5>
                 <p
                   class="card-subtitle mb-2 text-body-secondary"

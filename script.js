@@ -88,11 +88,9 @@ function searchPosition(
   let apiKey =
     "t7o2b3350b9f3f4ae8520ed2e97340f9";
   let lon =
-    position.coordinates
-      .longitude;
+    position.coords.longitude;
   let lat =
-    position.coordinates
-      .latitude;
+    position.coords.latitude;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios
     .get(apiUrl)

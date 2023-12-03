@@ -93,10 +93,11 @@ function searchPosition(
   let lat =
     position.coordinates
       .latitude;
-  let apiUrl = `https://https://api.shecodes.io/weather/v1/current?lon=${lon}&lat${lat}${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios
     .get(apiUrl)
     .then(showTemperature);
+  console.log(response.data);
 }
 
 function getPosition(event) {
